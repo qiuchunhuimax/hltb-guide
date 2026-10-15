@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f7fb">
+<title>高性价比人生指南 · 解读</title>
+<style>
+:root{
+  --bg:#f4f7fb;--panel:#fff;--ink:#14202e;--ink2:#42536b;--ink3:#7c8ba1;--line:#dfe7f1;
+  --blue:#2563eb;--blue-l:#e8f0fe;--green:#18794e;--green-l:#e6f4ec;
+  --shadow:0 1px 3px rgba(20,32,46,.06),0 8px 24px rgba(20,32,46,.06);
+}
+html[data-theme="dark"]{
+  --bg:#0e141c;--panel:#161e29;--ink:#e8eef7;--ink2:#a9b7c9;--ink3:#7a8a9e;--line:#26303d;
+  --blue:#5b93ff;--blue-l:#16233a;--green:#3fbf87;--green-l:#12291f;
+  --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:15px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 48px}
+
+header{padding:40px 0 24px;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+h1{font-size:30px;line-height:1.3;margin:12px 0 10px;letter-spacing:-.4px}
+.lede{font-size:14.5px;color:var(--ink2);margin:0 auto;max-width:620px}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+ padding:6px 13px;font-size:12.5px;color:var(--ink2);box-shadow:var(--shadow)}
+.chip b{color:var(--ink)}
+
+.entries{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0 26px}
+.entry{display:block;text-decoration:none;color:inherit;background:var(--panel);
+ border:1px solid var(--line);border-radius:14px;padding:22px 20px;box-shadow:var(--shadow);
+ transition:.15s;position:relative;overflow:hidden}
+.entry:active{transform:scale(.985)}
+.entry::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac)}
+.entry .ic{font-size:22px;line-height:1}
+.entry h3{margin:10px 0 7px;font-size:17px;letter-spacing:-.2px}
+.entry p{margin:0;font-size:13px;color:var(--ink2);line-height:1.65}
+.entry .go{margin-top:13px;font-size:12.5px;color:var(--ac);font-weight:700}
+
+.qrbox{text-align:center;margin:6px 0 30px}
+.qrbox img{width:180px;height:180px;border-radius:12px;background:#fff;padding:8px;
+ border:1px solid var(--line);box-shadow:var(--shadow)}
+.qrt{font-size:12.5px;color:var(--ink3);margin-top:9px}
+
+.note{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+ padding:16px 18px;font-size:13px;color:var(--ink2);line-height:1.75;box-shadow:var(--shadow)}
+.note b{color:var(--ink)}
+.note ul{margin:8px 0 0;padding-left:18px}
+.note li{margin-bottom:5px}
+
+footer{margin-top:28px;text-align:center;font-size:12px;color:var(--ink3);line-height:1.8}
+footer a{color:var(--blue);text-decoration:none}
+#tt{position:fixed;top:16px;right:16px;z-index:99;background:var(--panel);color:var(--ink);
+ border:1px solid var(--line);border-radius:9px;padding:7px 14px;font-size:13px;cursor:pointer;
+ box-shadow:var(--shadow)}
+
+@media (max-width:768px){
+  .wrap{padding:0 14px 36px}
+  header{padding:26px 0 18px}
+  h1{font-size:23px}
+  .lede{font-size:13.5px}
+  .entries{grid-template-columns:1fr;gap:11px;margin:22px 0 20px}
+  .entry{padding:18px 17px}
+  .entry h3{font-size:16px}
+  #tt{top:auto;bottom:14px;right:14px}
+}
+@supports (padding-bottom:env(safe-area-inset-bottom)){
+  body{padding-bottom:env(safe-area-inset-bottom)}
+}
+</style>
+</head>
+<body>
+<button id="tt">切换主题</button>
+<div class="wrap">
+<header>
+  <div class="eyebrow">GITHUB 开源项目解读</div>
+  <h1>《高性价比人生指南》</h1>
+  <p class="lede">一本把人生决策当工程问题处理的开源中文电子书。每条建议写明花掉什么、换回什么、
+  证据有多硬、原始出处在哪。</p>
+  <div class="stats">
+    <span class="chip">条目 <b>765</b></span>
+    <span class="chip">章节 <b>34</b></span>
+    <span class="chip">证据 A <b>495</b> · B <b>218</b> · C <b>52</b></span>
+    <span class="chip">原始文献 <b>2508</b></span>
+    <span class="chip">⭐ <b>63,161</b></span>
+  </div>
+</header>
+
+<div class="entries">
+  <a class="entry" href="report.html" style="--ac:var(--blue)">
+    <div class="ic">📊</div>
+    <h3>解读报告</h3>
+    <p>数据总览 · 三大主题精读 · 工程架构拆解 · AI Skill 机制 · 6 条可迁移方法</p>
+    <div class="go">打开报告 →</div>
+  </a>
+  <a class="entry" href="search.html" style="--ac:var(--green)">
+    <div class="ic">🔍</div>
+    <h3>全书检索</h3>
+    <p>765 条全量内联，离线可用。关键词搜索 + 证据等级 / 性价比 / 成本 / 口径 / 人群七维筛选</p>
+    <div class="go">开始检索 →</div>
+  </a>
+</div>
+
+
+<div class="note">
+  <b>关于数据来源</b>
+  <ul>
+    <li>上游仓库 <b>eternity4719/HowToLiveBetter</b>（CC BY 4.0 + MIT），本页为解读与本地化检索工具，非官方站点</li>
+    <li>条目数、证据分级、链接数已与仓库 README 徽章交叉校验一致</li>
+    <li>书里涉及政策、医疗、法律的内容可能过时或有误，各地执行也不同。办事、看病、打官司以当地部门、医生和律师说法为准</li>
+  </ul>
+</div>
+
+<footer>
+  数据拉取于 2026-10-15 · <a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener">上游仓库</a>
+  　·　<a href="https://eternity4719.github.io/HowToLiveBetter/" target="_blank" rel="noopener">官方在线版</a>
+</footer>
+</div>
+<script>
+const b=document.getElementById('tt'),h=document.documentElement;
+b.onclick=()=>{const d=h.getAttribute('data-theme')==='dark'?'light':'dark';
+  h.setAttribute('data-theme',d);b.textContent=d==='dark'?'切换浅色':'切换主题';};
+</script>
+</body>
+</html>
