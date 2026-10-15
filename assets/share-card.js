@@ -74,7 +74,7 @@
     text(`摘录与重排 · 数据版本 ${options.version}`, pad, foot + 328, `19px ${sans}`, '#BDCDC2');
 
     const qr = qrcodegen.QrCode.encodeText(options.url, qrcodegen.QrCode.Ecc.HIGH);
-    const scale = Math.floor(288 / (qr.size + 8)), size = (qr.size + 8) * scale;
+    const scale = Math.floor(330 / (qr.size + 8)), size = (qr.size + 8) * scale;
     const qx = width - pad - size, qy = foot + 42;
     ctx.fillStyle = '#FFFFFF'; ctx.fillRect(qx, qy, size, size);
     ctx.fillStyle = '#153E35';
